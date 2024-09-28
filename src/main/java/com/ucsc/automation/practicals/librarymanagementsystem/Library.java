@@ -26,16 +26,19 @@ public class Library {
     public void borrowItem(String serialNumber, User user){
         for(LibraryItem item : libraryItems){
             if(item.getSerialNumber().equals(serialNumber)){
-                if(!item.isBorrowed){
-                    System.out.println(user.getName() + " is going to borrow " + item.getTitle());
-                    item.borrowItem(user);
-                    borrowedItem.put(item, user);
-                    System.out.println(user.getName() + " borrowed " + item.getTitle());
-                }else {
-                    System.out.println("The item " + item.getSerialNumber() + "is already borrowed.");
+                if(borrowedItem.containsKey(item)){
+                    System.out.println("Item " + item.getTitle() + "is already borrowed");
+                    break;
                 }
+                borrowedItem.put(item, user);
+                item.isBorrowed = true;
+                System.out.println("Item " + item.getTitle() + " is successfully borrowed by " + user.getName());
                 break;
             }
         }
+    }
+
+    public void saveBorrowedItems(){
+        LibraryIO.saveBorrowedItemsToFile(borrowedItem, "borrowedItems.txt");
     }
 }

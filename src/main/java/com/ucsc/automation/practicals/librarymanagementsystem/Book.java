@@ -11,6 +11,8 @@ public class Book extends LibraryItem{
         if(!isBorrowed){
             isBorrowed = true;
             System.out.println(user + " borrowed the book " + getTitle());
+        }else {
+            System.out.println("Book " + getTitle() + " item is already borrowed");
         }
     }
 }

@@ -11,6 +11,8 @@ public class Magazine extends LibraryItem{
         if(!isBorrowed){
             isBorrowed = true;
             System.out.println(user + " borrowed the magazine " + getTitle());
+        }else {
+            System.out.println("Magazine " + getTitle() + " item is already borrowed");
         }
     }
 }

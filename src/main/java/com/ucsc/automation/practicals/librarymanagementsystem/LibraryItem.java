@@ -13,6 +13,7 @@ public abstract class LibraryItem implements Serializable {
         this.title = title;
         this.author = author;
         this.serialNumber = serialNumber;
+        this.isBorrowed = false;
     }
 
     public abstract void borrowItem(User user);
