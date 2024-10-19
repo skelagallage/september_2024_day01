@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/UCSC/september_2024_day01">
+        <parameter name="name" value="Sanath"></parameter>
+        <parameter name="age" value="36"></parameter>
+        <classes>
+            <class name="theory.testngex.ParameterEx">
+                <methods>
+                    <include name="printMyDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
