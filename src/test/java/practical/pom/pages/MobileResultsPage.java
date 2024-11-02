@@ -18,8 +18,5 @@ public class MobileResultsPage extends BasePage{
         appleCheckBox.click();
     }
 
-    public void scroll(int x, int y){
-//        Actions actions = new Actions(driver);
-        new Actions(driver).scrollByAmount(x, y).perform();
-    }
+
 }
